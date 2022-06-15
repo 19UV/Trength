@@ -30,6 +30,10 @@ set(TRENGTH_DEPEND ${TRENGTH_DEPEND} glfw)
 # Build Trength # 
 ################# 
 
+set(TRENGTH_SOURCE ${TRENGTH_SOURCE}
+	src/graphics/window.cpp
+)
+
 add_library(trength ${TRENGTH_SOURCE})
 target_include_directories(trength PUBLIC include/)
 target_link_libraries(trength PUBLIC ${TRENGTH_DEPEND})
