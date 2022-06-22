@@ -4,6 +4,8 @@
 
 #include <glfw/glfw3.h>
 
+#include "trength/graphics/context.hpp"
+
 namespace Trength::Graphics {
 	static unsigned int _window_count = 0;
 
@@ -21,6 +23,8 @@ namespace Trength::Graphics {
 		if(this->handle == nullptr) {
 			throw std::runtime_error("Could Not Create Window; Failed to create window");
 		}
+
+		this->context = std::make_unique<Context>(*this);
 
 		// FIXME: Add OpenGL
 		// FIXME: Add Vulkan/Metal/Direct 3D

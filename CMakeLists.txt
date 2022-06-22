@@ -31,6 +31,7 @@ set(TRENGTH_DEPEND ${TRENGTH_DEPEND} glfw)
 ################# 
 
 set(TRENGTH_SOURCE ${TRENGTH_SOURCE}
+	src/graphics/context.cpp
 	src/graphics/window.cpp
 )
 
