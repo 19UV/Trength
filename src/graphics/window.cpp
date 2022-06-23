@@ -6,6 +6,10 @@
 
 #include "trength/graphics/context.hpp"
 
+#ifdef TRENGTH_BACKEND_OPENGL
+#include "trength/opengl/context.hpp"
+#endif // TRENGTH_BACKEND_OPENGL
+
 namespace Trength::Graphics {
 	static unsigned int _window_count = 0;
 
@@ -24,7 +28,7 @@ namespace Trength::Graphics {
 			throw std::runtime_error("Could Not Create Window; Failed to create window");
 		}
 
-		this->context = std::make_unique<Context>(*this);
+		this->context = std::make_unique<OpenGL::Context>(*this);
 
 		// FIXME: Add OpenGL
 		// FIXME: Add Vulkan/Metal/Direct 3D

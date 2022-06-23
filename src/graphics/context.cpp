@@ -1,12 +1,17 @@
 #include "trength/graphics/context.hpp"
 
-#include <iostream>
-
 namespace Trength::Graphics {
 	Context::Context(Window& window) : parent(window) {
-		GLFWwindow* handle = this->parent.get_handle();
 	}
 
 	Context::~Context() {
+	}
+
+	Window& Context::get_window() const {
+		return this->parent;
+	}
+
+	GLFWwindow* Context::get_handle() const {
+		return this->parent.get_handle();
 	}
 };
