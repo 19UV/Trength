@@ -1,7 +1,6 @@
 #pragma once
 
 #include <string>
-#include <memory>
 
 struct GLFWwindow;
 
@@ -26,7 +25,7 @@ namespace Trength::Graphics {
 
 			GLFWwindow* get_handle() const;
 
-			std::unique_ptr<Context> context;
+			Context* context = nullptr;
 		
 		private:
 			GLFWwindow* handle = nullptr;

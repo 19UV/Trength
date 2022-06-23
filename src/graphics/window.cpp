@@ -28,13 +28,17 @@ namespace Trength::Graphics {
 			throw std::runtime_error("Could Not Create Window; Failed to create window");
 		}
 
-		this->context = std::make_unique<OpenGL::Context>(*this);
+		this->context = new OpenGL::Context(*this);
 
 		// FIXME: Add OpenGL
 		// FIXME: Add Vulkan/Metal/Direct 3D
 	}
 
 	Window::~Window() {
+		if(this->context != nullptr) {
+			delete this->context;
+		}
+
 		if(this->handle != nullptr) {
 			glfwDestroyWindow(this->handle);
 		}
