@@ -40,6 +40,12 @@ if(OPENGL_FOUND)
 	set(TRENGTH_DEFINE ${TRENGTH_DEFINE} TRENGTH_BACKEND_OPENGL)
 endif()
 
+find_package(Vulkan)
+if(Vulkan_FOUND)
+	set(TRENGTH_DEPEND ${TRENGTH_DEPEND} Vulkan::Vulkan)
+	set(TRENGTH_DEFINE ${TRENGTH_DEFINE} TRENGTH_BACKEND_VULKAN)
+endif()
+
 ################# 
 # Build Trength # 
 ################# 
