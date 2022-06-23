@@ -30,6 +30,8 @@ set(TRENGTH_DEPEND ${TRENGTH_DEPEND} glfw)
 # Find (and build) OpenGL/GLAD 
 find_package(OpenGL)
 if(OPENGL_FOUND)
+	message(STATUS "Found OpenGL")
+
 	set(TRENGTH_SOURCE ${TRENGTH_SOURCE}
 		src/opengl/context.cpp
 	)
@@ -42,6 +44,8 @@ endif()
 
 find_package(Vulkan)
 if(Vulkan_FOUND)
+	message(STATUS "Found Vulkan")
+
 	set(TRENGTH_DEPEND ${TRENGTH_DEPEND} Vulkan::Vulkan)
 	set(TRENGTH_DEFINE ${TRENGTH_DEFINE} TRENGTH_BACKEND_VULKAN)
 endif()
