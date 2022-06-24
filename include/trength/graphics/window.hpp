@@ -4,10 +4,6 @@
 
 struct GLFWwindow;
 
-#ifdef TRENGTH_BACKEND_OPENGL
-namespace Trength::OpenGL { class Context; };
-#endif // TRENGTH_BACKEND_OPENGL
-
 namespace Trength::Graphics {
 	class Context;
 
