@@ -8,6 +8,8 @@
 #define GLFW_INCLUDE_NONE
 #include <glfw/glfw3.h>
 
+#include "trength/info.hpp"
+
 namespace Trength::Vulkan {
 	Context::Context(Graphics::Window& window) : Graphics::Context(window) {
 		this->create_instance();
@@ -23,7 +25,11 @@ namespace Trength::Vulkan {
 		app_info.pApplicationName = "Trength Application"; // TODO: Get name from CMake config?
 		app_info.applicationVersion = VK_MAKE_VERSION(1, 0, 0); // TODO: Get application version
 		app_info.pEngineName = "Trength";
-		app_info.engineVersion = VK_MAKE_VERSION(0, 0, 1); // TODO: Get Trength version
+		app_info.engineVersion = VK_MAKE_VERSION(
+			TRENGTH_VERSION_MAJOR,
+			TRENGTH_VERSION_MINOR,
+			TRENGTH_VERSION_PATCH
+		);
 		app_info.apiVersion = VK_API_VERSION_1_0;
 
 		VkInstanceCreateInfo create_info{};

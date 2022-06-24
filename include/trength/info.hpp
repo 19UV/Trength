@@ -1,0 +1,5 @@
+#pragma once
+
+#define TRENGTH_VERSION_MAJOR 0
+#define TRENGTH_VERSION_MINOR 0
+#define TRENGTH_VERSION_PATCH 1
