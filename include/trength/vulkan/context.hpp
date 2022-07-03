@@ -15,7 +15,14 @@ namespace Trength::Vulkan {
 
 		private:
 			void create_instance();
+			VkPhysicalDevice pick_physical_device();
+			void create_logical_device(const VkPhysicalDevice& physical_device);
+			void get_queue_handles(const VkPhysicalDevice& physical_device);
 
-			VkInstance instance;
+			VkInstance instance = VK_NULL_HANDLE;
+			VkDevice device = VK_NULL_HANDLE;
+			
+			// May want to have an array or map?
+			VkQueue graphics_queue = VK_NULL_HANDLE;
 	};
 };
