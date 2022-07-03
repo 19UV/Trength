@@ -66,6 +66,10 @@ if(Vulkan_FOUND)
 	set(TRENGTH_DEFINE ${TRENGTH_DEFINE} TRENGTH_BACKEND_VULKAN)
 endif()
 
+if(NOT (OPENGL_FOUND OR Vulkan_FOUND))
+	message(FATAL_ERROR "Unable to Find Graphics Backend")
+endif()
+
 ################# 
 # Build Trength # 
 ################# 
