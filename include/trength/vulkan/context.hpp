@@ -13,6 +13,8 @@ namespace Trength::Vulkan {
 			Context(const Context& other) = delete;
 			virtual ~Context();
 
+			Graphics::Backend backend() const;
+
 		private:
 			void create_instance();
 			VkPhysicalDevice pick_physical_device();

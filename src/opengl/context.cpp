@@ -16,4 +16,8 @@ namespace Trength::OpenGL {
 
 	Context::~Context() {
 	}
+
+	Graphics::Backend Context::backend() const {
+		return Graphics::Backend::OpenGL;
+	}
 };

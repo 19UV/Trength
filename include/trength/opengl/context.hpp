@@ -9,5 +9,7 @@ namespace Trength::OpenGL {
 			Context(Graphics::Window& window);
 			Context(const Context& other) = delete;
 			virtual ~Context();
+
+			Graphics::Backend backend() const;
 	};
 };

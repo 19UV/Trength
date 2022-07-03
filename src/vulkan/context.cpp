@@ -29,6 +29,10 @@ namespace Trength::Vulkan {
 		vkDestroyInstance(this->instance, nullptr);
 	}
 
+	Graphics::Backend Context::backend() const {
+		return Graphics::Backend::Vulkan;
+	}
+
 	void Context::create_instance() {
 		VkApplicationInfo app_info{};
 		app_info.sType = VK_STRUCTURE_TYPE_APPLICATION_INFO;
